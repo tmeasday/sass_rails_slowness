@@ -1,0 +1,103 @@
+//How to use:
+// There is the main image select mixin 'image_select' and widgets 'is_...'.
+// Simply add the main mixin to get a horizontal list that has some options like alignment (left, center, or right) and dimension (how big is the image).
+// Add widgets depending on what type of image_select it is, so for some you might only need the loading widget - which signifies images are still loading, or added - which shows the green checkmark when items are added. Of course the widgets are in tandem with JS functions so be aware!.
+// EX:
+// .results{
+//   @include image_select(left, 80px);
+//   @include is_loading;
+//   @include is_added;
+//   Context specific styling here
+// }
+
+
+$default_is_dimension:80px;
+
+@mixin is_loading($image_dimension: $default_is_dimension){
+  .item.loading {
+    .image{
+      opacity: 0.3;
+      height: $image_dimension;
+      width: $image_dimension;
+      background: image-url('icon_bindle_70x70.png') no-repeat center center;
+      img{
+        visibility: hidden;
+      }
+    }
+  }
+}
+@mixin is_added{
+  .item.added {
+    .image{
+      position: relative;
+      img, .meta{opacity: .5;}
+      &:before{
+        content: "";
+        @extend .icon12.checkmark;
+        z-index: 4;
+        margin-left: -6px;
+        margin-top: -6px;
+        @include position(absolute, 50%, auto, auto, 50%, 12px, 12px);
+        @include border-radius(20px);
+        
+      }
+      &:after{
+        content: "";
+        text-align: center;
+        margin-left: -10px;
+        margin-top: -10px;
+        background-color: #33cc00;
+        @include background-image(linear-gradient(top, rgba(0,225,0, .7), rgba(0,153,0, .5) 50%)); 
+        @include position(absolute, 50%, auto, auto, 50%, 20px, 20px);
+        @include border-radius(20px);
+        @include box-shadow(rgba(0,0,0,.3) 0 1px 3px 0);
+        z-index: 3;
+      }
+    }
+  }
+}
+@mixin is_selected{
+  .item.selected{
+    .image img{
+        background-color: rgba(100, 100, 255, 0.2);
+        @include box-shadow($mblue 0 0px 5px 2px);                
+    }
+    .image img.background{
+        @include box-shadow($mblue 0 0px 5px 2px);                
+    }
+  }
+}
+@mixin image_center($image_dimension, $thumb: thumb, $border: 1px){
+  text-align: center;
+  height: $image_dimension;
+  line-height: $image_dimension;
+  img{
+    max-width: $image_dimension;
+    max-height: $image_dimension;                
+    vertical-align: middle;
+    @if $thumb == "thumb" {
+      @include thumb(none);
+    }
+    border: $border solid transparent;
+    @include box-sizing(border-box);
+    @include border-radius(3px);
+  }
+}
+@mixin image_select($alignment: left, $image_dimension: $default_is_dimension, $thumb:thumb, $border:1px ){
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  text-align: $alignment;
+  &:hover{overflow-x:auto;}
+  li.item{
+    width: $image_dimension;
+    margin: 10px 15px;
+    display: inline-block;
+    white-space: normal;
+    cursor: pointer;
+    .image{
+      @include image_center($image_dimension, $thumb, $border);    
+    }
+
+    }
+}

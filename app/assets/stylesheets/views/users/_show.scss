@@ -1,0 +1,24 @@
+.c_users {
+ #content{
+  .user_info{
+    p{
+      margin-bottom: .5em;
+      &:empty{
+        display:none;
+      }
+    }
+  }
+  .primary{
+    .details{
+      margin-bottom: 20px;
+      a:not(.btn_follow){ 
+        @extend .inset;
+        line-height: 24px;
+      }
+    }
+    .one_liner{
+      font-weight: bold;
+    }
+  }
+ }
+}

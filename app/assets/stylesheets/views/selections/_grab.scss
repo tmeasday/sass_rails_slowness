@@ -1,0 +1,64 @@
+.c_selections.v_grab {
+  .select{
+    /* This is the container of the new select element */  
+    $select_height: 24px;  	
+    height: $select_height;
+    line-height: $select_height;
+    display:inline-block;
+    width: 100%;
+    position:relative;
+    z-index: 1;
+    
+    select { display: none; }
+    
+    .selected {
+      @include onset_high;
+      position:absolute;
+      height:$select_height;
+      background: green;
+      width:100%;  
+      text-align:center;
+      cursor:pointer;
+    }
+    
+    &.open ul {
+      display: block;
+    }
+    ul{
+      display: none;
+      background: white;
+      overflow-y: auto;
+      max-height: $select_height * 7;
+      margin-top: 2px;
+      @include box-sizing(border-box);
+      @include position(absolute, $select_height, auto, auto, auto, 100%);
+      @include border-radius(0 0 3px 3px);
+      @include emboss_border;
+        li{
+          height: $select_height;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          @include box-sizing(border-box);
+          &:nth-child(2n){
+            background-color: #f9f9f9;
+          }
+          &:last-child{
+            border-bottom: 1px solid transparent;
+          }
+          
+          &:hover, &.highlighted {
+            color: #333;
+            a { color: #333; }
+            background-color: #b5d5fe;
+          }
+          &.active {
+            color: #333;
+            a { color: #333; }
+            background: #cccccc;
+          }
+        }      
+    }    
+  }
+}

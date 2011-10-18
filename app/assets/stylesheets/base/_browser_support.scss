@@ -1,0 +1,7 @@
+html.touch {
+  // touch devices shouldn't see the btm cap on the bindle, as they will zoom
+  // and pan manually...
+  .items .btmcap .zoom_slider {
+    display: none !important;
+  }
+}

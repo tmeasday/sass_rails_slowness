@@ -1,0 +1,15 @@
+.c_users.v_reserved {
+  table{
+    &.requests{  
+      @include table_behind;
+      @include table_columns(0px, 30%, 20%);
+    }
+    &.admin_stats{
+      @include table_columns(0px, 30%, 30%, 10%, 10%);      
+    }
+  }
+  h6 {
+    text-align: center;
+    margin: 30px 0;
+  }
+}

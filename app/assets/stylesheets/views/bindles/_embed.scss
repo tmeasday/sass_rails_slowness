@@ -1,0 +1,100 @@
+.c_bindles.v_embed{
+  overflow: hidden;
+  #embed{
+    &.szsmall {
+      @include embed_sizing(300px);
+    }
+    &.szmedium{
+      @include embed_sizing(375px);
+    }
+    &.szlarge {
+      @include embed_sizing(450px);
+    }
+    &.szhome {
+      @include embed_sizing(375px);
+      .items {
+        margin-bottom: 0;
+        @include box-shadow(rgba(0,0,0,.3) 0 2px 5px 0 inset);
+        @include border-radius(5px)
+      }
+      table, .embed_link, .actions{
+        display: none;
+      }
+      .things.collage.container{
+        bottom: 30px;
+      }
+    }
+    
+    text-align: left;
+    margin: 0px auto;
+    position: relative;
+    height: auto;
+    @include clearfix;
+    .items{
+      position: relative;
+      background: #eee;
+      background-image: image-url("textures/bg_noise_40x40.png");
+      @include emboss_border;
+      @include box-sizing(border-box);
+      @include box-shadow(rgba(0,0,0,.3) 0 2px 5px 0);
+      .things.collage.container{
+        bottom: 30px;
+      }
+      .btmcap{
+        border-right: none;
+        border-top: 1px solid #ddd;
+        padding-left: 12px;
+        padding-right: 160px;
+        font-size: 16px;
+        line-height:32px;
+        height: 32px;        
+        @include box-shadow(rgba(255,255,255,.7) 0 1px 1px 0px inset );
+          .zoom_slider{
+            width: 100px;
+            height: 20px;
+            line-height: 20px;            
+            /* Different margin because no shadowing makes it weird */
+            margin-top: -11px;
+            .knob_container{
+              .ui-slider-handle{
+                height: 18px;
+                line-height: 18px;              
+              }
+            }
+          }
+          a.embed_link{
+            float: right;
+            padding: 0 6px;
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            @extend .inset;
+            font-size: 11px;
+            text-transform: uppercase;
+              &:active{
+                border-right: 1px solid #ececec;
+                border-left: 1px solid #ececec; 
+                border-bottom: 1px solid #dddddd;
+                @include box-sizing(border-box);  
+                @include background(
+                  image-url('textures/bg_noise_80x80.png'),
+                  linear-gradient(top, rgba(102, 102, 102, .5), rgba(204, 204, 204, .5) 100%) 
+                );
+              
+              }
+          }
+      }
+    }
+    #overlays{
+      position: absolute;
+      z-index: 3;
+    }
+    .embed_share{
+      @include box-sizing(border-box);
+      @include position(relative, 20%, auto, auto, auto, 75%);
+      margin: 0 auto;
+      input{
+        width: 100%;
+      }
+    }
+  }
+}

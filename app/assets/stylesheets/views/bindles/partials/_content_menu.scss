@@ -1,0 +1,28 @@
+#content_menu{
+  @include box-sizing(border-box);
+  overflow-y: hidden;
+  overflow-x: auto;
+  .start_link{
+    line-height: 22px;
+    font-weight: normal;
+    margin-left: 230px;
+  }
+  .btn_new{
+    float: right;
+    position: relative;
+    z-index: 3;
+    margin-right: 10px;
+  }
+  .btn_minimize, .btn_minimize_big{
+    float: right;
+    overflow: hidden;
+    padding: 2px;
+    &:before{
+      margin: 0;
+    }
+  }
+  .btn_add_done{
+    float: right;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,18 @@
+.c_invitation_outgoing.v_new {
+  form{
+    .email_fields{
+      width: 100%;
+    }
+    .social_btn, .email_fields{
+      display: none;
+    }
+    &.email_form{//defaults to social form
+      .social_btn, .email_fields{
+        display: inline-block;
+      }
+      .email_btn, .social_checkboxes{
+        display: none;
+      }
+    }
+  }
+}

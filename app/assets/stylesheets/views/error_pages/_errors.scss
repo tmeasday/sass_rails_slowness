@@ -1,0 +1,22 @@
+.c_errors{
+  &.v_upgrade, &.v_not_found, &.v_wrong, &.v_change_reject{
+    @include layout_singlet(400px);
+    #content{
+      #front.error_page{
+        text-align: left;
+        padding: 30px;
+        img{float:left; margin: 0 10px 0 0;}
+      }
+      h2{
+        margin-top: 10px;
+      }
+      h6, p{
+        color: #666;
+      }
+      h2, h6{
+        font-weight: bold;
+        @include impress;
+      }
+    }
+  }
+}

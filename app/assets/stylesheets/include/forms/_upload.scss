@@ -1,0 +1,15 @@
+@mixin upload_btn{
+  .upload {
+    position: relative;
+    button{
+      display: block;
+      width: 100%;
+    }
+    input[type=file] {
+      cursor: pointer;
+      opacity: 0.0;
+      z-index: 0;
+      @include position(absolute, 0, auto, auto, 0);
+    }
+  }  
+}

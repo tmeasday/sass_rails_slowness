@@ -1,0 +1,43 @@
+.c_bindles.v_index{ 
+  table{
+    @include table_behind;
+    @include table_columns(0px, 30%, 50%, 10%, 10%);
+    border-left: none;
+    border-right: none;
+    ;
+    tbody{
+      tr{
+        /* Table column titles */
+        &:first-child{
+          background: rgba(245,247,255,1);
+          @include background-image(linear-gradient(top, rgba(220, 230, 245, .3), rgba(255, 255, 255, .6) 75%)); 
+          border-top: 1px solid #f7f7fb;
+        }
+        /* Striped bg */
+        &:nth-child(even){
+          td{
+            background: #f9f9f9;
+            &:first-child{
+              background: white;
+            }              
+          }
+        }
+        /* Divider b/w bindles */
+        &.first{
+          border-top: 1px solid #eee;
+            td:first-child{
+              display: table-cell;
+              vertical-align: top;
+              @include meta_lockup;              
+              padding: 16px 20px;
+            }
+        }
+        td{
+          &:first-child{
+          display: none;
+          }
+        }
+      }
+    }
+  }
+}

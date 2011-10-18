@@ -1,0 +1,29 @@
+table{
+  width: 100%;
+  background: white;
+  overflow: hidden;
+  @include emboss_border;
+  tr{
+    line-height: 28px;
+    th{
+      background-color: #f2f4f9;
+      border-bottom: 1px solid #eee;
+      padding-left: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: .9em;
+      color: #666;
+      letter-spacing: .05em;
+      /* This is if they have a modern browser */
+      @include background-image(linear-gradient( top, rgba(220, 230, 245, .3), rgba(255, 255, 255, .6) 75%)); 
+    }
+    td{
+      padding-left: 10px;
+    }
+    &:nth-child(2n){
+      td{
+        background: #f9f9f9;
+      }
+    }
+  }
+}

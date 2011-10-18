@@ -1,0 +1,89 @@
+.l_application{
+  #header{
+    z-index: 6;
+    .wrapper{
+      @include background-image(linear-gradient(top, rgba(108, 113, 118, 1), rgba(66, 72, 79, 1) 100%));
+      .logo{
+        background: image-url('logo_bindle_90x21.png') no-repeat center 13.5px;
+        height: 45px;
+        width: 90px;
+        display: block;
+        text-indent: -9999em;
+        margin-left: 20px;
+      }
+      ul.nav { 
+        float: right;
+        line-height: 45px;
+        height: 45px;
+        position: relative;
+        margin-right: 8px;
+        li {
+          position: relative;
+          height: 100%;
+          float: left;
+          color: white;
+          font-size: 16px;
+          border-right: 1px solid transparent;
+          border-left: 1px solid transparent;
+          /* This is to effectively have a 1px vertical border instead of 2px as defined above */
+          margin-left: -1px;
+          padding: 0 12px;
+          @include emboss;
+            &.current{
+              border-right: 1px solid rgba(255,255,255, .2);
+              border-left: 1px solid rgba(255,255,255, .2);           
+              @include raised;
+              @include background-image(linear-gradient(top, rgba(51, 56, 63, 1) 70%, rgba(62, 72, 76, 1) 100%));
+              @include box-shadow(rgba(0, 0, 0, .3) 0px 1px 3px 0px inset);   
+            }
+            a{
+              color: white;
+                &:hover{
+                  color: $lblue;
+                } 
+                &:active{
+                  color: #333;
+                  @include impress;
+                }       
+            }
+            &[data-widget=dropmenu]{
+              img{margin-top: (45px- 30px)/ 2;vertical-align: top;}
+              span{
+                visibility: hidden; 
+                margin: 0px 0px 0px 4px;
+                &:before{
+                  margin-right:0px;
+                }
+              }
+              &:hover, &.current{
+                span{visibility: visible;}
+              }
+              &.current{
+                span:before{
+                  background-position:-408px -51px;
+                }
+              }
+              ul{
+                width: 100px;
+                right: 0px;
+                $bgcolor: rgba(66, 72, 79, 1);
+                background:$bgcolor;    
+                line-height: 2em;
+                li{
+                  margin: 0;
+                  padding: 0;
+                  border-right: 0;
+                  border-left: 0;
+                  &:before{@include too_long($bgcolor);}
+                }
+              }
+            }
+        }/* End of li */
+      }/* End of ul.nav */
+    }/* End of wrapper */
+    #content_menu {
+      height: 4px;
+      @include reveal;
+    }
+  }  
+}  

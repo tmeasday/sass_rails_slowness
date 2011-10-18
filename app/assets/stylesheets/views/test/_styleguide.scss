@@ -1,0 +1,33 @@
+/* Styleguide */
+.styleguide_impress{
+  @include impress;
+}
+.styleguide_emboss{
+  @include emboss;
+}
+.styleguide_emboss_neg{
+  @include emboss_neg;
+}
+.styleguide_raised{
+  @include raised;
+}
+.styleguide_emboss_border{
+  @include emboss_border;
+}
+.styleguide_impress_border{
+  @include impress_border;
+}
+.styleguide_reveal{
+  @include reveal;
+}
+.styleguide_pshop{
+  @include pshop;
+}
+.styleguide_toggle{
+  .toggle_widget_btns{
+    @include register_toggle_btns(4);
+  } 
+}
+.styleguide_cursor{
+  @include cursor_hand;
+}

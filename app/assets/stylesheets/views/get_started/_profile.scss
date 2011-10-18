@@ -1,0 +1,23 @@
+.c_get_started.v_profile{
+  textarea{
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  button[type=submit]{
+    clear: both;
+    float: right;
+  }
+  #passport{
+    width: 600px;
+    margin: 50px auto;
+    @include box-shadow(rgba(0,0,0,.3) 0 2px 5px 0);
+    @include border-radius(5px);
+    @include clearfix;
+    .page_left, .page_right{
+      height: 350px;
+      overflow: auto;
+    }
+    @include page_left;
+    @include page_right;
+  }
+}

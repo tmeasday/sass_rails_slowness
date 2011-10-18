@@ -1,0 +1,106 @@
+// Meta_lockup works by adding it as a li.classname or wrapping the contents in a div. 
+@mixin ml_image($width:60px, $height:60px, $border-radius:3px){
+  .image{
+    width: $width;
+    text-align: center;
+    margin-top: 2px;
+    margin-right: 10px;
+    float: left;
+    img{
+      max-width: $width;
+      max-height: $height;
+      height: auto;
+      @include border-radius($border-radius);
+      &.image_missing {
+        background: image-url('icon_grey_bindle_60x60.gif') no-repeat;
+        height: $width;
+        width: $height;
+        display: inline-block;
+      }
+    }
+  }  
+}
+@mixin meta_lockup($padding:10px){
+  padding: $padding 0px;
+  overflow: auto;
+  @include ml_image();
+  .meta{
+    overflow: hidden;
+    .title{
+      font-weight: bold;
+      color: #333;
+    }
+    .author{
+      float: left;
+      margin-right: 4px;
+    }
+    p{
+      margin-bottom: .5em;
+    }
+    .details{
+      margin-bottom: 0px;
+    }
+    .btn, .onset_low, .onset_mid, .onset_high, .onset_dis{
+      display: inline-block;
+      width: auto;
+    }
+    .action{ 
+      float: right;
+      margin-left: 5px;
+      width: auto;
+      @include onset_low;
+      &.current{
+        @include onset_mid;
+      }
+      &:empty:before{
+        margin-right:0px;
+      }
+    }
+    .meta_lockup{//nested
+      padding: 0px;
+      &.added{
+        @include ml_image();
+      }
+      &.created{
+        @include ml_image(80px, 80px);
+      }
+      &.updated{
+        @include ml_image();
+      }
+      &.followed{
+        @include ml_image(30px, 30px, 0);
+      }
+      &.commented, &.response{
+        @include ml_image(30px, 30px, 0);
+      }
+      &.response{
+        margin-bottom: 10px;
+      }
+      &.liked{
+        @include ml_image(80px, 80px);
+      }
+      &.posted{
+        padding-top:10px;
+        .meta{
+          overflow: visible;
+          position: relative;
+          &:before{
+            content: '';
+            @include css_arrow(up, #eee, 10px, -20px);
+          }
+          .posting{
+            background: #eee;
+            padding: 10px 10px 0;
+            @include border-radius(5px);
+            overflow: auto;
+          }
+        }
+      }
+    }//end nest
+    .responses{
+      border-top:2px solid #eee;
+      margin-top: 10px;
+      padding-top:10px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.c_bindles.v_discover{
+  #content{
+    .chrome_nav{
+      margin-bottom: 10px;
+    }
+    [data-widget=toggle] .slide{
+      padding-left: 20px;
+    }  
+  }
+  .discover_widgets{
+    width: 400px;
+    padding-bottom: 30px;
+    float: left;
+  }
+  .sidebar{
+    float: left;
+    width: 260px;
+    margin-left: 20px;
+    .wrapper{//make this into a mixin
+      border-bottom: 1px solid #eee;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+      padding:0 12px 12px;
+      margin-bottom: 30px;
+      @include border-radius(5px 5px 0 0);
+      h5{
+        border-bottom: 1px solid #eee;
+        background: #eee;
+        color: #666;
+        line-height: 32px;
+        margin: 0 -12px 12px- 5px ;
+        padding-left: 12px;
+        @include border-radius(5px 5px 0 0);
+      }
+    }
+  }
+}

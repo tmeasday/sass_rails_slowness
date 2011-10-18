@@ -1,0 +1,15 @@
+@mixin layout_minimum{
+  #header {
+   @include position(absolute, 0, 0, auto, 0, auto, 50px);
+  }
+  #content {
+  	@include position(absolute, 50px, 0, 0, 0);
+    overflow-y: scroll;
+  }
+  @media only screen and (max-device-width: 768px) {
+    #content {
+      @include position(relative, 50px, 0, 0, 0);
+      overflow-y: auto;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+$experimental-support-for-svg: true;
+
+$lblue: #0197ce;
+$mblue: #0066cc;
+$blend: #656878;
+$paper: #f9f9f9;
+$egrey: #eeeeee;
+$cgrey: #cccccc;
+
+@import 'compass';
+@import 'compass/reset';
+
+@import 'include/helpers';
+@import 'include/alerts';
+@import 'include/bevel';
+@import 'include/thumbnails';
+@import 'include/icons';
+@import 'include/paragraphs';
+@import 'include/image_select';
+
+@import 'include/forms/stdform';
+@import 'include/forms/too_long';
+@import 'include/forms/upload';
+
+@import 'include/layouts/behind';
+@import 'include/layouts/bindles';
+@import 'include/layouts/chrome';
+@import 'include/layouts/embed';
+@import 'include/layouts/get_started';
+@import 'include/layouts/minimum';
+@import 'include/layouts/overlay';
+@import 'include/layouts/singlet';
+
+@import 'include/links/brush';
+@import 'include/links/btn';
+@import 'include/links/cursor';
+@import 'include/links/onset';
+@import 'include/links/textlink';
+
+@import 'include/lists/meta_lockup';
+
+@import 'include/misc/book';
+
+@import 'include/tables/behind';
+
+@import 'include/toggle/sort_nav';
+@import 'include/toggle/toggle_btns';
+ 
+@import 'base/base';
+@import 'base/browser_support';
+@import 'base/forms';
+@import 'base/icons';
+@import 'base/links';
+@import 'base/lists';
+@import 'base/paragraphs';
+@import 'base/stats';
+@import 'base/tables';
+@import 'base/toggle';
+@import 'base/webkitscroll';
+
+@import 'widgets/collage_and_list.scss';
+@import 'widgets/dropmenu.scss';
+@import 'widgets/image_complete.scss';
+@import 'widgets/image_progress.scss';
+
+@import 'layouts/master';
+@import 'layouts/overlay';
+ 
+@import 'views/application/global';
+@import 'views/application/header';
+@import 'views/application/footer';
+@import 'views/application/sidebar_logged';
+@import 'views/application/sidebar_profile';
+ 
+@import 'views/admin/show';
+@import 'views/admin/sidebar_admin';
+ 
+@import 'views/info/index';
+@import 'views/info/index_screenshots';
+@import 'views/info/template';
+@import 'views/info/sidebar_info';
+ 
+@import 'views/bindles/index';
+@import 'views/bindles/discover';
+@import 'views/bindles/bindles';
+@import 'views/bindles/show';
+@import 'views/bindles/edit';
+@import 'views/bindles/embed';
+@import 'views/bindles/necessaries';
+// FIXME: should these be imported in the files where they are needed?
+@import 'views/bindles/partials/metadata';
+@import 'views/bindles/partials/comments';
+@import 'views/bindles/partials/content_menu';
+@import 'views/bindles/partials/glance';
+ 
+@import 'views/invitations/index';
+@import 'views/invitations/new';
+@import 'views/invitations/expired';
+@import 'views/invitations/show';
+ 
+@import 'views/invitation_requests/new';
+@import 'views/invitation_outgoing/new';
+ 
+@import 'views/selections/edit';
+@import 'views/selections/grab';
+@import 'views/selections/new';
+ 
+@import 'views/users/show';
+@import 'views/users/settings';
+@import 'views/users/reserved';
+ 
+@import 'views/dashboards/edit';
+@import 'views/dashboards/show';
+@import 'views/contacts/index';
+@import 'views/notifications/index';
+@import 'views/registrations/new';
+ 
+@import 'views/get_started/profile';
+@import 'views/get_started/interests';
+@import 'views/get_started/follow';
+@import 'views/get_started/make';
+ 
+@import 'views/feedbacks/feedback';
+@import 'views/devise/devise';
+@import 'views/error_pages/errors';
+@import 'views/error_pages/upgrade';
+ 
+@import 'views/test/grid';
+@import 'views/test/styleguide';
+ 
+// last, so it can override stuff
+@import 'base/browser_support';
+

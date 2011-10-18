@@ -1,0 +1,72 @@
+/*--- icons ---*/
+.icon12, .icon16{
+  &:before{
+    content:'';
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: 2px;
+    overflow: hidden;
+  }
+  &:empty{
+    &:before{
+      margin-right:0px;
+    }
+  }
+}
+.icon12{
+  &:before{
+    height: 12px;
+    width: 12px;
+    margin-right: 4px;
+  }
+}
+.icon16{
+  &:before{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+}
+@include register_icons('.bindle', 1);
+@include register_icons('.bindle_save', 2);
+@include register_icons('.thing', 3);
+@include register_icons('.add', 4);
+@include register_icons('.reply', 5);
+@include register_icons('.collage', 6);
+@include register_icons('.list', 7);
+@include register_icons('.eye', 8);
+@include register_icons('.bubble', 9);
+@include register_icons('.tag', 10);
+@include register_icons('.pencil', 11);
+@include register_icons('.checkmark', 12);
+@include register_icons('.chain', 13);
+@include register_icons('.cardboard', 14);
+@include register_icons('.rss', 15);
+@include register_icons('.magnify', 16);
+@include register_icons('.copy', 17);
+@include register_icons('.background', 18);
+@include register_icons('.image', 19);
+@include register_icons('.uarr', 20);
+@include register_icons('.home', 21);
+@include register_icons('.weight', 22);
+@include register_icons('.cost', 23);
+@include register_icons('.grab', 24);
+@include register_icons('.dropdown', 25);
+@include register_icons('.close', 26);
+@include register_icons('.heart', 27);
+@include register_icons('.reset', 28);
+@include register_icons('.handle', 29);
+@include register_icons('.dashboard', 30);
+@include register_icons('.compass', 31);
+@include register_icons('.cog', 32);
+@include register_icons('.dropup', 33);
+@include register_icons('.facebook', 34);
+@include register_icons('.twitter', 35);
+@include register_icons('.envelope', 36);
+@include register_icons('.subtract', 37);
+@include register_icons('.weblog', 38);
+@include register_icons('.globe', 39);
+@include register_icons('.portrait', 40);
+@include register_icons('.people', 41);
+@include register_icons('.neighbor', 42);

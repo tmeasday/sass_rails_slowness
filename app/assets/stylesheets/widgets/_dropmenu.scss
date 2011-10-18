@@ -1,0 +1,52 @@
+[data-widget=dropmenu]{
+  position: relative;
+  &:hover{
+    &:before{
+      visibility: visible;
+    }     
+  }
+  &.current{
+    ul{
+      display: block; 
+    }
+    &:before{
+      visibility: visible;
+    }                                          
+  }
+  &:before{
+    visibility: hidden;
+    margin-right:0;
+  }
+  ul{
+    display: none; 
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    top: 100%;
+    margin: 2px 0 0 0;
+    $bgcolor: white;
+    background: $bgcolor;
+    @include emboss_border;
+    @include border-radius(0 0 3px 3px);
+    @include box-shadow(rgba(0, 0, 0, 0.3) 0 2px 5px 0px);      
+      li{
+        @include box-sizing(border-box);
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,.3);
+        border-top: 1px solid rgba(255,255,255,.3);
+        margin: 0;
+        padding: 0;
+        &:first-child{
+          border-bottom: 1px solid rgba(0,0,0,.3);
+          border-top: 1px solid transparent;
+        }
+        &:last-child{
+          border-bottom: 1px solid transparent;
+          border-top: 1px solid rgba(255,255,255,.3);
+        }
+        &:before{@include too_long($bgcolor);}        
+      }
+  }
+}

@@ -1,0 +1,97 @@
+@mixin layout_gs{
+  $header_wrapper_height: 45px;
+  $image_complete_height: 140px;
+  $full_header_height: $header_wrapper_height + $image_complete_height;
+  
+  #header {
+    #content_menu {
+      height: $image_complete_height;
+      padding: 10px 20px;
+    }
+  }
+  #content{
+    top: $full_header_height;
+  }
+  #header{
+    #content_menu{
+      white-space: nowrap;
+    }
+    .intro{
+      padding-top: 20px;
+      vertical-align: top;
+      width: 200px;
+      margin-right: 30px;
+      display: inline-block;
+    }
+    .first_steps{
+      height: 130px;
+      margin: 0 -20px;
+      display: inline-block;
+      @include image_select(middle, 80px, none, 0px);
+      @include is_added;
+      .item{
+        &.current, &.current a{
+          cursor: default;
+        }
+        &:not(.current){
+          img{
+            @include opacity(.3);
+          }
+        }
+        &:hover{
+          img{
+            @include opacity(1);
+          }
+        }
+        a, a:hover, a:active{
+          color: white;
+        }
+        img{
+          border: none;
+        }
+        .title{
+          margin-top: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+  }//header
+  #content{
+    #front{
+      position: relative;
+      padding:20px 0px 30px;
+      .section_hdr{
+        padding: 0 30px 10px;
+        margin: 0 0px 20px;
+        border-bottom: 1px solid #eee;
+        @include clearfix;
+        h3{
+          font-weight: bold;
+          @include impress;
+          float: left;
+        }
+        p{
+          clear: both;
+          margin-bottom: 10px;
+        }
+        img{
+          display: inline-block;
+          vertical-align: middle;
+          float: right;
+        }
+      }
+      form{
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .freestyle_btn{
+        display: inline-block;
+        width: 100%;
+        border-top: 1px solid #eee;
+        padding: 20px 30px 0;
+        margin: 0 -30px;
+        @include clearfix;
+      }
+    }
+  }//end content
+}

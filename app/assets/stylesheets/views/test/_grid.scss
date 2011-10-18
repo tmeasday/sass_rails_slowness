@@ -1,0 +1,14 @@
+.grid_column {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid rgba(0, 255, 0, 0.2);
+  z-index: 1337;
+}
+.grid_row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
+  z-index: 1337;
+}

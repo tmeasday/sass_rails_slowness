@@ -1,0 +1,23 @@
+#comments {
+  clear: both;
+  @include clearfix;
+  .comment{
+    @include meta_lockup;
+    @include ml_image(30px, 30px, 0);
+    .meta{
+      p{
+       clear: none;
+       margin-bottom: 0;
+      }
+      .posted_at{
+        color: #999;
+      }
+      input, textarea{
+        margin-top: 2px;
+      }
+      .comment_post{
+        height: 30px;
+      }
+    }
+  }
+}

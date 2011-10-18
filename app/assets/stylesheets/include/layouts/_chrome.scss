@@ -1,0 +1,86 @@
+@mixin chrome_hdr{
+    .chrome_hdr{
+      display: block;
+      color: #666;
+      border-bottom: 1px solid #ccc;
+      background: white;
+      line-height: 40px;
+      padding: 0px 20px;
+      @include box-sizing(border-box);
+      margin: 0;
+      padding: 0 20px;
+      @include box-sizing(border-box);
+        h1,h2,h3,h4,h5,h6{
+          line-height: 40px;
+          display: inline-block;
+          color: #333;
+          font-weight: bold;
+        }
+        .topcap_right{
+          float: right;
+        }
+        .topcap_left{
+          float: left;
+          margin-right: 5px;
+        }
+        a.btn, button{
+          display: inline;
+          &.topcap_right, &.topcap_left{
+            margin-top: 8px;
+          }
+        }
+    }
+}
+@mixin chrome_nav{
+  .chrome_nav{
+    margin: 0px 0 20px 0;
+    padding: 16px 20px;
+    background: #f9f9f9;
+    @include impress;
+    @include box-shadow(rgba(0,0,0,.1) 0 -1px 0px 0 inset);
+    border-bottom: 1px solid #eee;
+    @include stdfont;
+    @include clearfix;
+    .topcap_right{
+      float: right;
+      clear: right;
+    }
+    h3{
+      display:inline-block;
+      float: left;
+    }
+    .overview{
+      float: right;
+      font-size: 14px;
+      li{
+        float: left;
+        margin-right: 10px;
+        line-height: 21px*1.5;
+        color: #666;
+        &:last-child{
+          margin-right:0px;
+        }
+      }
+    }
+    .nav{
+      margin-top: 4px;
+      float: left;
+      clear: both;
+      @include sort_nav(1px, 20px);
+    }
+    .related_links{
+      margin-top: 4px;
+      float: right;
+      >a{
+        float: left;
+        &:not(:last-child){
+          margin-right: 10px;
+          padding-right: 10px;
+        }        
+      }
+    }
+    .details{
+      float: left;
+    }
+  }
+}

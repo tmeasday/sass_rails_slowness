@@ -1,0 +1,142 @@
+@mixin section_hdr($border_color: #eee, $text_color: #333){
+  .section_hdr{
+    border-bottom: 1px solid $border_color;
+    color: $text_color;
+    text-transform: uppercase;
+    padding-bottom: .5em;
+    overflow: auto;
+    a{
+      float: right;
+      text-transform: none;
+    }
+  }
+}
+@mixin behind_feed{
+  .primary{
+    width: 60%;
+    max-width: 600px;
+    padding: 0 20px;
+    float: left;
+    @include box-sizing(border-box);
+    @include section_hdr(#ccc);
+    &.feed{// if the feed is all by itself it gets this spacing
+      margin-top: -20px;
+      >li:first-child{
+        margin-top:10px;
+      }
+      &.selectable{//if the feed is selectable it resets
+        >li:first-child{
+          margin-top:0px;
+        }        
+      }
+    }
+    .feed, &.feed{
+      margin-bottom: 20px;
+      >li{
+        border-top: 1px solid transparent;
+        border-bottom: 1px dotted #eee;
+        margin-top: -1px;
+        position: relative;
+        @include meta_lockup(10px);
+        @include ml_image(50px, 50px, 0);
+      }
+      &.selectable{
+        >li{
+          @include meta_lockup(20px);
+          &:hover{
+            background: #f4f4fe;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left:  20px;
+            padding-right: 20px;
+          }
+          &.selected{
+            background: #f5f5fe;
+            border-top: 1px dotted #eee;
+            padding-left:20px;
+            padding-right: 20px;
+            margin-left:-20px;
+            margin-right: -20px;
+            @include box-shadow(rgba(0,0,0,.1) -1px 0 1px 0 inset);
+            &:before{
+              content: '';
+              @include css_arrow(left, #fff, 100%, 50%);
+              margin-top: -10px;
+              margin-left: -20px;
+            }
+          }
+        }//end selectable
+      }
+    } 
+  }
+  .secondary{
+    width: 40%;
+    max-width: 400px;
+    padding: 0 20px;
+    float: left;
+    @include box-sizing(border-box);
+    >div.wrapper{
+      margin-bottom: 30px;
+      @include section_hdr(#eee, #666);
+      .secondary_list{
+        >li{
+          @include meta_lockup;
+          .description, .details >li:empty{
+            display: none;
+          }
+          a{
+            &.tell, &.grab, &.delete{
+              display: none;
+            }
+          }
+          .meta{
+            color: #666;
+            h6{
+              font-size: 12px;
+              font-weight: bold;
+              color: #333;
+            }      
+          }
+        }
+      }
+      [data-widget=tumblr], [data-widget=twitter]{ overflow:hidden;}
+    }    
+  }
+}
+@mixin layout_behind{
+  #header {
+     @include position(absolute, 0, 0, auto, 0, auto, 50px);
+   }
+   #content {
+    	@include position(absolute, 50px, 0, 0, 0);
+  	  @include chrome_nav;
+    	#sidebar.logged, #sidebar.info, #sidebar.admin {
+    		@include position(absolute, auto, auto, auto, auto, 200px, 100%);
+  		  @include box-sizing(border-box);
+    	}
+    	.chrome_hdr{
+    	  @include position(fixed, 50px, 0, auto, 200px, auto, 40px);
+    	  z-index: 5;
+    	}
+    	#scrolling {
+   	    @include position(absolute, 0px, 0, 0, 200px);
+    		overflow-y: scroll;
+        background: white;
+        @include box-shadow(rgba(0,0,0,.1) 0px 0px 10px 0px);
+        //case: needing to include chrome_hdr sometimes ex: user profile
+        &.empty_hdr{
+          top: 0;
+        }
+    	}
+   }
+   @media only screen and (max-device-width: 768px) {
+     #content {
+       @include position(relative, 50px, 0, 0, 0);
+       #scrolling {
+         @include position(relative, 0, 0, 0, 0);
+         margin-left: 200px;
+         overflow-y: auto;
+       }
+     }
+   }
+}

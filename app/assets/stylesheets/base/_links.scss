@@ -1,0 +1,32 @@
+a, button {
+  outline: none;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  @include stdlink;
+  &.inverse{ @include inverse;}
+  &.inset {@include inset;}
+  &.btn, &.brush, &.reset{@include global_btn;}
+  &.onset_low{@include onset_low;}
+  &.onset_mid{@include onset_mid;}
+  &.onset_high{@include onset_high;}
+  &.onset_dis{@include onset_disabled;}  
+  &.brush {@include brush;}
+  &.btn{
+    @include btn;
+    &.back_btn{@include back_btn;}
+    &.forward_btn{@include fwd_btn;}
+  }
+}
+
+
+.btn_follow{@include onset_mid;}
+.btn_choose{@include onset_mid;}
+.btn_join{@include onset_high;}
+.btn_comment{@include onset_high;}
+.btn_like{@include onset_low;}
+.btn_continue{ @include onset_mid;}
+.btn_make{@include onset_high;}
+.btn_screenshots{ @include onset_low;}
+.btn_skip{ @include onset_low;}
+.btn_more{ @include onset_low;}

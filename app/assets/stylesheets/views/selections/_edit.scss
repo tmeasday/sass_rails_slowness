@@ -1,0 +1,133 @@
+.c_selections.v_edit{
+  .meta_wrapper {
+    padding-bottom: 0px;
+    p{ 
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .change_img{
+      height: 80px;
+      width: 220px;
+      margin: 8px auto 10px;
+      background: image-url('img_rarr_25x18.png') no-repeat center center;
+      @include impress;
+      color: #999;
+      text-transform: uppercase;
+      .old_image{
+        float: left;
+        background: white;
+        width: 80px;
+        @include image_center(80px);
+      }
+      .new_image{
+        float: right;
+        height: 80px;
+        width: 80px;
+        background: image-url('bg_cutout_80x80.png') no-repeat;
+        text-align: center;
+        @include box-sizing(border-box);
+        h6 {
+          margin-top: 16px;
+        }
+        [data-widget=image_progress] {
+          display: none;
+          width: 80px;          
+          @include image_center(80px);
+        }
+        &.chosen {
+          background: none;
+          //line height is here b/c the text in the h6
+          line-height: 80px;
+          h6 {
+            display: none;
+          }
+          [data-widget=image_progress] {
+            display: block;
+          }
+        }
+      }
+    }
+    .toggle_widget{
+      margin: 0 -10px;
+      .toggle_widget_btns{
+        @include register_toggle_btns(3);
+      }  
+      .slide{
+        border-bottom: none;
+        height: 140px;
+        &.browse_adjust, &.browse_upload{
+          padding-top: 20px+ 12px;
+        }
+        &.browse_background{
+          @include pshop;
+          padding: 10px 10px 0;
+          @include border-radius(0 0 5px 5px);
+          .image_select{
+            height: 100%;
+            @include image_select(center);
+            @include is_selected;
+            p{margin-top:10px;}
+            .item:first-child:not(.selected) .image img{
+              //resets .thumb
+              border:none;
+              background: transparent;
+              @include box-shadow(none);
+            }
+            .item:first-child, .item:last-child{
+              &:after{
+                @include osfont;
+                display: inline-block;
+                margin-top: 6px;
+                font-weight: bold;
+              }
+            }
+            .item:first-child{
+              &:after{
+                content: 'Transparent';
+              }
+            }
+            .item:last-child{
+              &:after{
+                content: 'Background';
+              }
+            }
+          }
+        }
+        &.browse_alt{
+          padding: 10px 10px 0;
+          @include reveal;
+          @include border-radius(0 0 5px 5px);
+          h4{
+            line-height: 120px;
+            text-align: center;
+          }
+          .image_select{
+            height: 100%;
+            margin: 0 -10px;
+            @include image_select(left);
+            @include is_selected;
+            @media screen and (-webkit-min-device-pixel-ratio:0) {
+              height: 97%;
+            }
+            li.item{
+              margin: 15px;
+            }
+            li:first-child{
+              margin-left:20px;
+            }
+            
+          }
+        }
+        &.browse_upload{
+          @include upload_btn;
+          overflow: hidden;
+        }
+      }
+    }
+  }//metawrapper
+  button[type=submit]{
+    width: 100%;
+    @include onset_high;
+  }
+}

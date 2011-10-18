@@ -1,0 +1,6 @@
+@mixin center_with_absolute_position($width:400px) {
+  position: absolute;
+  width: $width;
+  left: 50%;
+  margin-left: -1 * ceil($width / 2);
+}

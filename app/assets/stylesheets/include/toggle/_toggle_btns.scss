@@ -1,0 +1,28 @@
+@mixin register_toggle_btns($btncount:2){
+  /* This is for fluid width toggle buttons */
+  $btnwidth: 100%/ ($btncount+1);
+  $btnmargin: (100%- ($btnwidth* $btncount))/ 2;
+  .toggle_left, .toggle_middle, .toggle_right{
+    float: left;
+    text-align: center;
+    width: $btnwidth;
+    @include box-sizing(border-box);
+  }
+  .toggle_left{
+    @include border-radius(3px 0 0 3px);
+    border-right: 1px solid white;
+    margin-left: $btnmargin;
+    margin-right: -1px;
+  }
+  .toggle_middle{
+    @include border-radius(0);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    margin: 0 -1px;
+    @include border-radius(0);
+  }
+  .toggle_right{
+    @include border-radius(0 3px 3px 0);
+    border-left: 1px solid white;      
+  }
+}

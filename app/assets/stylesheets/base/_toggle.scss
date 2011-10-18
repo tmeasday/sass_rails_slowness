@@ -1,0 +1,27 @@
+.toggle_widget{
+  .toggle_widget_btns{
+    overflow: auto;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    @include register_toggle_btns;
+  }
+  ul.slides{
+    border-top: 1px solid #eee;
+    margin-top: -12px;
+    overflow: auto;
+    position: relative;
+    z-index: 0;
+    li.slide{
+      padding: 20px;
+      width: 100%;
+      @include box-sizing(border-box);
+    }
+  }
+  textarea, input{
+    width: 100%;
+    overflow: hidden;
+    @include stdfont;
+    @include box-sizing(border-box);
+  }  
+}

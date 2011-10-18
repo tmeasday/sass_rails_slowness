@@ -1,0 +1,47 @@
+.c_get_started.v_make{
+  .make_guide{
+    #diagram{
+      margin: 40px auto 10px;
+      width: 700px;
+      height: 455px;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-image: image-url('get_started/img_getstarted_make_rest_540x355.jpg');
+      
+      &.search{
+        background-image: image-url('get_started/img_getstarted_make_search_540x355.jpg');
+        .search{@include opacity(.7);}
+      }
+      .search{
+        background: image-url('get_started/text_img_search_here_107x32.png') no-repeat;
+        @include position(absolute, 16px, auto, auto, -20px, 107px, 32px);
+      }
+      
+      &.arrange{
+        background-image: image-url('get_started/img_getstarted_make_arrange_540x355.jpg');
+        .arrange{@include opacity(.7);}
+      }
+      .arrange{
+        background: image-url('get_started/text_img_arrange_collage_184x106.png') no-repeat;
+        @include position(absolute, auto, auto, 25px, 80px, 184px, 106px);
+      }
+      
+      &.talk{
+        background-image: image-url('get_started/img_getstarted_make_talk_540x355.jpg');
+        .talk{@include opacity(.7);}
+      }
+      .talk{
+        background: image-url('get_started/text_img_talk_about_111x35.png') no-repeat;
+        @include position(absolute, 130px, -20px, auto, auto, 111px, 35px);
+      }
+      .search, .arrange, .talk{
+        text-indent: -999em;
+        overflow: hidden;
+        z-index: 3;
+        @include opacity(.7);
+        &:hover{@include opacity(1);}
+      }
+    }
+  } 
+}

@@ -1,0 +1,17 @@
+/* Webkit Scroll in image complete */
+.results, #first_steps, .image_select{
+  &::-webkit-scrollbar {  
+    height: 6px;
+    width: 6px;
+  }  
+  &::-webkit-scrollbar-thumb {  
+    @include border-radius(10px);
+    background-color: rgba(0,0,0, .3);
+  } 
+  /* This sets the spacing on the opposite ends of the scroll */
+  &::-webkit-scrollbar-button:start:decrement, &::-webkit-scrollbar-button:end:increment {
+      display: block;
+      width: 10px;
+      background: transparent;
+  }
+}

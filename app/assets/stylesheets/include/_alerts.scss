@@ -1,0 +1,63 @@
+@mixin css_arrow($type, $color, $x, $y, $size:10px){
+  //Use the x and y coordinates relative to where it is supposed to be positioned
+  //So the rarr is positioned relative right... just look at it!
+  @if $type == "up" {border-color: transparent transparent $color transparent;  top:$y; left:$x; }
+  @else if $type == "left" {border-color: transparent $color transparent transparent;  top:$y; left:$x;}
+  @else if $type == "right" {border-color: transparent transparent transparent $color;  top:$y;   right:$x;}
+  @else if $type == "down" {border-color: $color transparent transparent transparent; bottom:$y; left:$x;}  
+  border-style: solid;
+  border-width: $size;
+  height:0;
+  width:0;
+  position:absolute;
+}
+@mixin num($color: #666, $bgcolor: transparent){
+  @include position(absolute, 50%, 10px , auto, auto, auto, 18px);
+  @include border-radius(18px);
+  margin-top: -9px;
+  padding: 0 6px;
+  @include stdfont;
+  background: $bgcolor;
+  color: $color;
+  @include text-shadow(none);
+}
+@mixin error_message{
+  padding: 20px;
+  margin-top: 18px;
+  margin-left: 20px;
+  position: relative;
+  @include border-radius(5px);
+  @include box-sizing(border-box);
+  @include box-shadow(rgba(0,0,0,.3) 0 2px 5px 0);
+  background-color: #ffff66;
+  color: #333;
+  @include text-shadow(none);
+  &:before{
+    content: '';
+    @include css_arrow(up, #ffff66, 30px, -20px);
+  }
+  h4 {
+    i{
+      color: #666;
+      text-align: left;
+    }
+  }
+}
+@mixin paper_alert($radius:5px, $margin-bottom:30px, $padding: 20px){//minimal alert for use on any white background
+  @include box-sizing(border-box);
+  @include border-radius($radius);
+  padding: $padding;
+  border: 1px solid #ebebf1;
+  margin-bottom: $margin-bottom;
+  position: relative;
+  background: #f5f5fe;
+  h6{
+    @include impress;
+  }
+  .close_link{
+    @include position(absolute, 5px, 5px, auto, auto, 18px, 18px);
+    @include border-radius(18px);
+    text-align:center;
+    background: #dedede;
+  }
+}

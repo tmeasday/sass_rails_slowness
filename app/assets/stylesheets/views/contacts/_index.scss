@@ -1,0 +1,36 @@
+.c_contacts.v_index{
+  .secondary{
+    .image{
+      height: 160px;
+      width: 160px;
+      background: #eee;
+    }
+    .image, .description, .follow{
+      margin-bottom: 10px;
+    }
+    .details{
+      margin-bottom: 0;
+    }
+    .stats_vert{
+      padding-left: 0;
+    }
+  }
+  .primary{
+    .section_hdr{
+      padding-bottom: .5em;
+      border-bottom: 1px solid #ccc;
+    }
+    .friends_find{
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+      span{
+        @include position(absolute, 6px, auto, auto, 6px);
+      }
+      input{
+        padding-left: 24px;
+        @include osfont;
+      }
+    }
+  }
+}

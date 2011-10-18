@@ -1,0 +1,48 @@
+// Base paragraph formatting 
+@mixin document($font:14px){
+  font-size: $font;
+  h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+  p{
+    margin-bottom: 14px;
+  }
+  img{
+    &.left{
+      float:left;
+      margin:10px 10px 10px 0;
+      clear: left;
+    }
+    &.right{
+      float:right;
+      margin:10px 0px 10px 10px;
+      clear: right;
+    }
+    &.center{
+      clear: both;
+      display: block;
+      margin: 10px auto;        
+    }  
+  }
+  ol, ul{
+  margin: 12px 0 12px 40px;
+  }
+  li ul, li ol{
+    margin: 0px 0 0px 16px;
+  }
+  ul{
+  list-style: disc outside;
+  }
+  ol{
+  list-style: decimal outside;
+  }
+}
+@mixin stdfont{
+  font-size: 12px;
+  line-height: 1.5em;
+}
+@mixin osfont{
+  font-size: 14px;
+  line-height: 1.5em;
+}

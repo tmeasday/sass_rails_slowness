@@ -1,0 +1,12 @@
+#sidebar.info{
+  @extend #sidebar.logged;
+  h6{
+    line-height: 40px;
+    margin:-6px -8px 0px;
+    padding:0 24px;
+    color: #999;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @include impress;
+  }
+}

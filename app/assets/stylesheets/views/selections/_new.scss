@@ -1,0 +1,29 @@
+.c_selections.v_new {
+  @include upload_btn;
+  button[type=submit]{
+    display: none;
+  }
+  // the two different states
+  .meta_wrapper, button[type=submit] {
+    display: none;
+  }
+  .uploaded {
+    .upload{
+      display: none;
+    }
+    .meta_wrapper, button[type=submit] {
+      display: block;
+    }
+    button[type=submit]{
+      width: 100%;
+    }
+  }
+  .meta_wrapper {
+    @include meta_lockup;
+    @include ml_image(50px, 50px, 3px);
+    padding: 10px;
+    textarea {
+      height: 60px;
+    }
+  }
+}

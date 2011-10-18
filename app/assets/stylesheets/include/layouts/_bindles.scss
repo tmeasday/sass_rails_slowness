@@ -1,0 +1,56 @@
+@mixin layout_bindles($edit:show){
+  /*Fixes overflow problem for qtip*/
+  overflow: hidden;
+  #header {
+     @include position(absolute, 0, 0, auto, 0);
+   }
+   #content {
+      @include position(absolute, 50px, 0, 0, 0);
+
+      @if $edit == "edit" {
+        #scrolling {
+        	@include position(absolute, 40px, 0px, 0, 65%);
+        	overflow-y: scroll;
+        }
+        .chrome_hdr{
+          @include position(fixed, 50px, auto, auto, 65%, 35%, 40px);
+          z-index: 5;
+        }
+      } @else {
+        #scrolling {
+        	@include position(absolute, 0px, 0px, 0, 65%);
+        	overflow-y: scroll;
+        }
+      }
+
+    	#sidebar.bindles {
+    		@include position(absolute, 0, 35%, 0, 0);
+    	}
+
+
+   }
+  #content{
+    @if $edit == "edit" {
+      @include chrome_hdr;
+    } @else{
+  	  @include chrome_nav;      
+    }
+    #scrolling{
+      @include box-shadow(rgba(0,0,0,.1) 0px 0px 10px 0px);
+      background: white;
+      z-index: 4;
+    }
+  }
+  @media only screen and (max-device-width: 768px) {
+    #content {
+      @include position(relative, 50px, 0, 0, 0);
+      height: 100%;
+      #scrolling {
+        @include position(relative, 0, 0, 0, 0);
+        margin-left: 65%;
+        overflow-y: auto;
+        min-height: 100%;
+      }
+    }
+  }
+}

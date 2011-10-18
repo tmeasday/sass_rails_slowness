@@ -1,0 +1,7 @@
+@mixin thumb($float: left){
+  float: $float;
+  @include box-shadow(rgba(0, 0, 0, .3) 0px 1px 3px 0px);
+  @include box-sizing(border-box);  
+  border-top: 1px solid rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(204,204,204,.7);
+}

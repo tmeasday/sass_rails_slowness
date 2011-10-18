@@ -1,0 +1,7 @@
+.c_invitations.v_show {
+  table{
+    @include table_behind;
+    @include table_columns(0px);
+    @include stdfont;
+  }
+}

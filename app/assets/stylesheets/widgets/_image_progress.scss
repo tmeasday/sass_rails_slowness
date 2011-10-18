@@ -1,0 +1,29 @@
+[data-widget=image_progress] {
+  position: relative;
+  text-align: center;
+  /*This is metalockup for image, we need to remove the styles on the img class to get the progress to work*/
+  img {
+  //make me a mixin with dimension as a param
+    max-height: 60px;
+    max-width: 60px;
+    margin: 0;
+    opacity: 0.2;
+  }
+  .percentage {
+    display: none;
+    @include position(absolute, auto, 0, -20px, 0);
+    line-height: 20px;
+    text-align: center;
+  }
+  &.progress {
+    .percentage {
+      display: block;
+    }
+  }
+  &.spinning {
+    background: #eee image-url('icon_spinnerpaper_12x12.gif') no-repeat center center;
+    img {
+      visibility: hidden;
+    }
+  }
+}

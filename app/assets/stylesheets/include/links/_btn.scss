@@ -1,0 +1,82 @@
+@mixin btn{
+  background: #eee;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+  border-top: 1px solid transparent;
+  border-left: none;
+  border-right: none;
+  position: relative;
+  @include inset;
+  @include border-radius(3px);
+  &:active, &.current{
+    background:#e1e1e1;
+    border-top: 1px solid rgba(0,0,0,.3);
+    border-bottom: 1px solid rgba(255,255,255,1);
+    @include box-shadow(rgba(0, 0, 0, .2) 0px 1px 3px 0px inset); 
+  }
+}
+// Back and forward buttons
+// How to use: put .back or .forward in your 
+// classname, and span class .arrow inside the a 
+// element 
+@mixin arrow{    
+  border-style:solid;
+  width:0;
+  height:0;
+  position: absolute;
+}
+@mixin back_btn($x: -4px, $y: 1px){
+  .arrow{
+    border-color: transparent #eee transparent transparent;
+    border-width:11px 5px 11px 0px;
+    left: $x;
+    top: 0;
+    z-index: 1;
+    @include arrow;
+  }
+  &:after{
+    content: "";
+    text-indent: -1337px;
+    overflow: hidden;
+    border-color: transparent rgba(0,0,0,.2) transparent transparent;
+    border-width: 11px 5px 11px 0px;
+    left: $x;
+    top: $y;   
+    @include arrow;
+  }
+  &:active{
+  .arrow{border-color: transparent #d2d2d2 transparent transparent;}
+    &:after{
+      left:$x;
+      top:$y* -1;
+      @include arrow;
+    }      
+  }
+}
+@mixin fwd_btn($x: -4px, $y: 1px){
+  .arrow{
+    border-color: transparent transparent transparent #eee;
+    border-width:11px 0px 11px 5px;
+    right: $x;
+    top: 0;
+    z-index: 1;
+    @include arrow;
+  }
+  &:after{
+    content: "";
+    text-indent: -1337px;
+    overflow: hidden;
+    border-color: transparent transparent transparent rgba(0,0,0,.2);
+    border-width: 11px 0px 11px 5px;
+    right: $x;
+    top: $y;
+    @include arrow;
+  }
+  &:active{
+  .arrow{border-color: transparent transparent transparent #d2d2d2;}
+    &:after{
+      right: $x;
+      top: $y* -1;
+      @include arrow;
+    }      
+  }
+}

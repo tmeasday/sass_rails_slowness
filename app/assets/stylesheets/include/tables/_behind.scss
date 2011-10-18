@@ -1,0 +1,40 @@
+/*Fixme -  mixin should allow you to define the # of columns*/
+@mixin table_columns($border: 1px, $width_1:auto, $width_2:auto, $width_3:auto, $width_4: auto){
+  tbody tr{
+    th{
+      border-right: 1px solid #eee;
+      @include box-sizing(border-box);
+    }
+    td{border-right: $border solid #eee;}
+  /* Horizontal Spacing */
+    th, td{
+      padding-left: 12px;
+      padding-right: 12px;
+      line-height: 24px;
+      height: 24px;
+      &:first-child{
+        padding-left: 20px;
+        width: $width_1;
+      }
+      &:nth-child(2){
+        width: $width_2;
+      }
+      &:nth-child(3){
+        width: $width_3;
+      }
+      &:nth-child(4){
+        width: $width_4;            
+      }
+    }
+  }
+}
+/*For all tables using the behind template*/
+@mixin table_behind{
+  width: 100%;
+  min-width: 760px;
+  margin-top: -21px;
+  border-bottom: 1px solid #ccc;
+  tbody{
+    padding: 0 20px;
+  }
+}

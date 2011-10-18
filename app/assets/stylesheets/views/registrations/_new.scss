@@ -1,0 +1,50 @@
+.c_registrations.v_new{
+  #content{
+    text-align: center;
+      #front{
+        padding: 15px 0 0px;
+        .auth{
+          background: image-url('icon_bindle_160x160.png') no-repeat center top;
+          margin-top: -20px;
+          padding: 160px 30px 30px;
+          h2{
+            font-weight: bold;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+      }
+      .errors{ 
+         width: 320px; 
+         margin: 0 auto;
+         @include box-sizing(border-box);
+       }
+      .errors{
+        @include border-radius(3px);
+        background: #ffff66;
+        margin-top: 18px;
+        padding: 10px;
+        line-height: 20px;
+        position: relative;
+        &:before{
+          content: '';
+          @include css_arrow(up, #ffff66, 30px, -20px);
+        }
+        
+      }
+      .auth.links{
+        padding-top: 10px; 
+        li{
+          clear:both;
+          display:block;    
+          line-height: 20px;    
+          a{
+            @extend a.inset;
+          }  
+        }
+      }      
+    
+  } 
+}

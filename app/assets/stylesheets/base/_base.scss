@@ -1,0 +1,25 @@
+html {
+  @include background(image-url('textures/bg_noise_80x80.png') repeat, #eee);
+  height: 100%;
+}
+body {
+  font-size: 12px;
+  background: transparent;
+  text-align: center;
+  color: #333;
+  font-family: 'Lato', Tahoma, Geneva, sans-serif;
+  line-height: 1.5em;
+  height: 100%;
+}
+/* Headings */
+h1,h2,h3,h4,h5,h6,p{ line-height: 1.5em;}
+h1 { font-size: 36px;} 
+h2 { font-size: 24px;}
+h3{ font-size: 21px;}
+h4{ font-size: 18px;}
+h5{ font-size: 16px;}
+h6{ font-size: 14px;}
+
+.hide{
+  display: none;
+}

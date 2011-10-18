@@ -1,0 +1,160 @@
+.draggable_area {
+  border: 3px solid #333;
+  @include border-radius(5px);
+  background-color: #aaa;
+  &:hover {
+    border-color: #000;
+    background-color: #888;
+  }
+}
+textarea{
+  @include stdform;
+  resize: none;
+  overflow: auto;
+  display: block;
+    &.new{
+      color: #AA5959;
+    }
+}
+.autoresize_wrapper {
+  position:relative;
+  textarea {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    overflow-y: hidden;
+    margin-bottom: 0;
+  }
+  .textarea_proxy {
+    @extend textarea;
+    visibility: hidden;
+    position: static;
+  }
+}
+input{
+  @include stdform;
+}
+label{
+  color: #666;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+form{
+  text-align: left;
+  label {
+    float: left;
+    margin-right: 4px;
+  }
+  /* Exceptions */
+  input[type=checkbox] + label, input[type=radio] + label {
+    display: inline;
+    line-height: 1em;
+    color: #333;
+    font-weight: normal;
+  }
+  textarea, .autoresize_wrapper, input, select{
+    float: left;
+    width: 100%;
+  }
+  select{
+    margin-bottom: 10px;
+  }
+  textarea {
+    @include stdfont;
+  }
+  input{      
+    @include stdform;
+      &[type=checkbox]{
+        width: auto;
+        margin-right: 6px;
+      }
+  }
+  p{
+    margin-bottom: 10px;
+  }
+  //Add a class in links.scss to style the button... the most common for btns is .onset_high
+  button{
+    @extend button.reset;
+    &[type=submit]{
+      @include onset_high;
+    }
+  }
+  //Confirm message hide/show
+  .confirm_msg{
+    display: none;
+  }
+  &.confirm{
+    > *:not(.confirm_msg){
+      display:none;
+    }
+    .confirm_msg{
+      display: block;
+    }
+  }
+  // Errors 
+  .field_with_errors{    
+    label{display: inline;}
+    input{display:inherit;}
+    textarea{display: inherit;}
+  }
+  .formError{
+    float: left;
+    color: #ffcc00;
+    font-style: italic;
+  }
+  // Covers 
+  &:not(.no_covers) {
+    &.submitting, &.success {
+      position: relative;
+      > * {
+        opacity: .5;
+      }
+      button{
+        opacity: 1;
+      }
+      > .cover {
+        opacity: 1.0;
+        //Negative top value takes into account the button and it's margin
+        @include position(absolute, -25px- 10px, 0, 0, 0);
+        z-index: 1;
+      }
+    }    
+  }
+  .double_input{
+    >li{
+      float: right;
+      width: 48%;
+      &:first-child{
+        float:left;
+      }
+    }
+  }
+  .double_btn{
+    text-align: right;
+    a, button{
+      width: 48%;
+      float: right;
+    }
+    &>:first-child{
+      float: left;
+    }
+  }
+  .freestyle_btn{// quirky styles for cross browser labels suck 
+    //attempting to get everything to display on the same baseline as the button
+    a{
+      float: left;
+      line-height: 1em;
+      margin-right: 10px;
+      padding-top: 5px;
+    }
+    input[type=checkbox] + label, input[type=radio] + label, input[type=checkbox], input[type=radio] {
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+    button[type=submit]{
+      float: right;
+    }
+  }
+}

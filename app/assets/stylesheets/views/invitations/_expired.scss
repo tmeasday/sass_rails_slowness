@@ -1,0 +1,11 @@
+.c_invitations.v_expired {
+  #front{
+    padding: 30px;
+    h2{
+      margin-bottom: 10px;
+    }
+    button[type=submit], .btn_continue{
+      width: 100%;
+    }
+  }
+}

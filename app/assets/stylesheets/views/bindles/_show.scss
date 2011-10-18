@@ -1,0 +1,92 @@
+.c_bindles.v_show{
+  .join_cta{
+    @include paper_alert(0px, 0px, 20px 30px);
+    @include box-shadow(rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset);
+    &:before{
+      content:'';
+      display: block;
+      background: image-url('icon_bindle_color_16x16.png') no-repeat center top;
+      width: 16px;
+      height: 16px;
+      float: left;
+      margin-right: 6px;
+    }
+  }
+  // Embed size list
+  ul.embed_size{
+    border: none;
+    width: 100%;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    display: block;
+    overflow: auto;
+    li{
+      float: left;          
+      display: block;
+      @include box-sizing(border-box);          
+      text-align: center;
+      padding:4px 0 0;
+      border:1px solid transparent;
+      width: 33%;
+      height: 90px;
+        &:not(:first-child){
+          margin-left: -1px;
+        }
+        &:last-child{
+          border-right: 1px solid transparent;
+        }
+        &:hover, &.chosen{
+          .szsmall{
+          background: image-url('img_szsmall_30x30.png') no-repeat 0 -31px;                  
+          }
+          .szmedium{
+          background: image-url('img_szmedium_40x40.png') no-repeat 0 -41px;                  
+          }
+          .szlarge{
+          background: image-url('img_szlarge_50x50.png') no-repeat 0 -51px;                  
+          }                                
+        }
+        &.chosen{
+          background: #f2f4f9;
+          border: 1px solid #ccd6e6;
+        }
+        .szsmall, .szmedium, .szlarge{
+          display: block;
+          margin: 6px auto 0 ;
+          
+        }
+        .szsmall{
+          background: image-url('img_szsmall_30x30.png') no-repeat 0 0;
+          width: 30px;
+          height: 30px;
+  
+        }
+        .szmedium{
+          background: image-url('img_szmedium_40x40.png') no-repeat 0 0;
+          width: 40px;
+          height: 40px;
+        }
+        .szlarge{
+          background: image-url('img_szlarge_50x50.png') no-repeat 0 0;
+          width: 50px;
+          height: 50px;
+        }
+    }
+  }
+  .checklist{
+    overflow: auto;
+    >div:first-child{
+      float: left;
+      width: 33%;
+      text-align: center;
+    }
+    ul{
+      @include box-sizing(border-box);
+      float: left;
+      width: 66%;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      input{ margin-bottom:0;}
+    }
+  }
+}

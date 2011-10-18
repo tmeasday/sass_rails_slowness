@@ -1,0 +1,52 @@
+.c_profiles.v_settings {
+  #content{
+    #front{
+      padding: 20px 30px 30px;
+    }
+    h2, h6{
+      font-weight: bold;
+      @include impress;
+    }
+    h2, h6{
+      margin-bottom: 10px;
+    }
+    .settings_nav{
+      @include clearfix;
+      width: 100%;
+      padding:0 0px 15px;
+        a{
+          display: inline-block;
+          margin-right: 15px;
+          @include impress;    
+        }
+    }
+    ul.slides{
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+      margin: 0px -30px;
+      li{
+        padding: 0 30px;
+      }
+    }
+    form{
+      p{
+        margin-bottom: 15px;
+      }
+      button[type=submit], .btn_continue{
+        width: 100%;
+      }
+    }
+    .success_message {
+      display: none;
+    }
+    .success {
+      form {
+        display: none;
+      }
+      .success_message {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}

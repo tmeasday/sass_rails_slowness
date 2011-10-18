@@ -1,0 +1,6 @@
+.l_application{
+  #content {
+    text-align: left;
+    @include clearfix;     
+  }
+}

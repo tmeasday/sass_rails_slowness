@@ -1,0 +1,18 @@
+@mixin layout_singlet($singlet_width:400px){
+  #front {
+    width: $singlet_width;
+    margin: 50px auto 50px;
+    background: white;
+    @include border-radius(5px);
+    @include box-sizing(border-box);
+    @include box-shadow(rgba(0,0,0,.3) 0 2px 5px 0);
+    @include clearfix;
+  }
+  
+  @media only screen and (max-device-width: 768px) {
+    #content {
+      @include position(relative, 50px, 0, 0, 0);
+      overflow-y: auto;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.c_bindles.v_edit{
+  $header_wrapper_height: 45px;
+  $image_complete_height: 175px;
+  $minimized_image_complete_height: 24px+ 10px+ 10px;
+  $full_header_height: $header_wrapper_height + $image_complete_height;
+  
+  #header {
+    #content_menu {
+      height: $minimized_image_complete_height;      
+      padding: 10px 20px;
+      &.maximized{
+        height: $image_complete_height;
+      }    
+    }
+  }
+  
+  #content{
+    top: $header_wrapper_height + $minimized_image_complete_height;
+    .chrome_hdr{
+        @include position(fixed, $header_wrapper_height + $minimized_image_complete_height, 0, auto, 65%, auto, 40px);
+        z-index: 5;
+    }
+    &.maximized{
+      top: $full_header_height;  
+      .chrome_hdr{
+          @include position(fixed, $full_header_height , 0, auto, auto, 35%, 40px);
+      }
+    }
+
+  }
+  /* Styling */
+  #content{
+    #bindle_name{
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.5em;
+    }
+  }
+  .edit_necessary_link {
+    display: none;
+  }
+  .show.highlight{
+    &:hover{
+      background: #f9f9fe;
+      margin: -20px -30px -20px;
+      padding: 20px 30px;
+      cursor: pointer;
+    }
+  }
+  .autoresize_wrapper{
+    margin-bottom: 10px;
+  }
+  [data-widget=collage] .item .image img{ 
+    cursor: pointer;
+  }
+  [data-widget=collage] .item.ui-draggable-dragging .image img{ 
+    cursor: image-url("cursor/closedhand.cur"), auto; 
+  }
+  button.done{
+    @include onset_mid;
+  }
+  // If empty
+  &.no_items{
+    .collage .cta_items{display:block;}
+    button.done{@include onset_low;}
+    .item_title, .glance.list{
+      display: none;
+    }
+  }
+}

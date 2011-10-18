@@ -1,0 +1,10 @@
+@mixin cursor_hand{
+  @include user_select;
+  &:hover{
+     cursor: url("/images/cursor/openhand.cur"), auto; 
+     cursor: -moz-grab; 
+  } 
+  &:active{
+   cursor: url("/images/cursor/closedhand.cur"), auto; 
+  }
+}

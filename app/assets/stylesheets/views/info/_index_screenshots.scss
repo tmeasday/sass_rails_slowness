@@ -1,0 +1,45 @@
+.c_info.v_screenshots{
+  //Styles for the screenshots are optimized for image viewing, they differ from our usual overlay
+  .featured_screenshot{
+    width: 100%;
+    height: 500px;
+    line-height: 500px;
+    text-align: center;
+    cursor: pointer;
+    img{
+      height: auto;
+      max-height: 500px;
+      width: 800px;
+      vertical-align: middle;
+      @include border-radius(5px);
+      @include box-shadow(rgba(0,0,0,.3) 0 5px 20px 0);
+    }
+  }
+  &.overlay{
+    //Reseting overlay styles
+    border: none;
+    padding: 0;
+    background: none;
+    @include box-shadow(none);
+    //Off centering close overlay to not interfere with image viewing
+    .close_overlay{
+      width: 20px;
+      height: 20px;
+      padding: 1px 0 0 0;
+      right: -10px;
+      top: -10px;
+      @include border-radius(10px);
+      @include box-shadow(rgba(0,0,0,.3) 0 2px 5px 0);
+      @include background(
+        image-url('textures/bg_brush_40x40.png'),
+        linear-gradient(top, rgba(187, 187, 187, 1), rgba(224, 224, 224, 1) 50%)
+      );
+    }
+    .image_select{
+      @include image_select(center, 50px);
+      @include is_selected;
+      li.item{margin: 10px}
+      .image{ height: 50px; line-height:50px;}
+    }
+  }
+}

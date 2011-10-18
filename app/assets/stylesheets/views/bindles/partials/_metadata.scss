@@ -1,0 +1,80 @@
+.metadata{
+  width: 100%;
+  position: relative;
+  @include box-sizing(border-box);
+  @include clearfix;
+  //like the chromenav, consider making this a mixin
+  background: #f9f9f9;
+  @include impress;
+  @include box-shadow(rgba(0,0,0,.1) 0 -1px 0px 0 inset);
+  border-bottom: 1px solid #eee;
+  @include stdfont;
+  img{
+    float: left;
+    margin: 0px 10px 10px 0;
+  }
+  .social {
+    position: relative;
+    .iframe_evade_fb{
+    height: 20px;
+    width: 90px;
+    display: block;
+    top:0px;
+    }
+    .iframe_evade_tw{
+    height: 20px;
+    width: 90px;
+    display: block;
+    top:24px;
+    }
+  }
+  .name{
+    font-weight: bold;
+    &:empty:after{
+      content: "What's your Bindle's name?";
+      @include stdlink;    
+    }
+  }
+  .show{
+    .description{
+      clear: both;
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom:0;
+      }
+    }
+    &.highlight{
+      .description{
+        >p:only-child:empty:after {
+          content: "Describe your Bindle: likes, loves, future changes...";
+          @include stdlink;
+        }
+      }//
+    }
+  }   
+
+  .delete{
+    float: left;
+    @extend .inset;
+  }
+  .edit {
+    display: none;
+  }
+  &.editing {
+    .edit {
+      display: block;
+      left: 60px;
+      overflow: hidden;
+      @include box-sizing(border-box);      
+    }
+    .show {
+      display: none;
+    }
+  }
+  .overview{
+    li{
+      float: left;
+    }
+  }
+  @include ml_image(50px, 50px, 0);
+}

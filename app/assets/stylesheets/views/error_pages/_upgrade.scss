@@ -1,0 +1,14 @@
+.c_errors.v_upgrade{
+  &.overlay{
+    text-align: left;
+    .browser_support{
+      @include clearfix;
+      text-align: center;
+      li{
+        width: 80px;
+        margin:10px 0px 0;
+        display: inline-block;
+      }  
+    }
+  }
+}

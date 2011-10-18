@@ -1,0 +1,17 @@
+.c_info.v_about, .c_info.v_terms, .c_info.v_privacy, .c_info.v_press{
+  #content{
+    #scrolling{
+  		padding:10px 30px;
+        .document{
+          max-width: 600px;
+        }
+        h4{
+          margin-bottom: 10px;
+          line-height: 40px;
+          border-bottom: 1px solid #eee;
+          font-weight: bold;
+          @include impress;
+        }
+    }
+  }
+}

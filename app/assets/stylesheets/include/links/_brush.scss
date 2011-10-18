@@ -1,0 +1,22 @@
+@mixin brush{
+  @include impress;
+  @include border-radius(3px); 
+  @include background(
+    image-url('textures/bg_brush_40x40.png'),
+    linear-gradient( top, rgba(187, 187, 187, 1), rgba(224, 224, 224, 1) 50%)
+  );
+  @include emboss_border;
+  @include box-shadow(rgba(0, 0, 0, .3) 0px 0px 0px 3px); 
+  color: #666;
+  &.disabled {@include opacity(.5);}
+  &:hover { color: $lblue; }
+  &:active, &[disabled]{
+    @include impress;
+    @include impress_border;    
+    color: #333;
+    @include background(
+      image-url('textures/bg_brush_40x40.png'),
+      linear-gradient( top, rgba(203, 203, 203, 1), rgba(187, 187, 187, 1) 50%)
+    );
+  }
+}

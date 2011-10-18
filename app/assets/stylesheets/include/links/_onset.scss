@@ -1,0 +1,76 @@
+@mixin global_btn{
+  text-align: center;
+  @include user_select;
+  // This adds up to a btn height of 24px @ 12pt font & scales reasonably well at larger sizes 
+  padding:4px 8px;
+  line-height: 1.15em;
+  @include box-sizing(border-box);    
+  // Bug in FF that adds another inner border
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+@mixin onset_disabled{
+  @include emboss_neg;
+  @include background-image( linear-gradient(top, rgba(238,238,238, 0), rgba(238,238,238, .6) 100%));
+  @include impress_border;
+  @include box-shadow(rgba(0,0,0, .3) 0 1px 3px 0 inset );    
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  &:active{
+    @include box-shadow(rgba(0,0,0, .3) 0 1px 3px 0 inset );    
+  }
+}
+@mixin onset{
+  @include global_btn;
+  display: inline-block;
+  @include emboss_border;
+  @include border-radius(3px);
+  @include box-shadow(rgba(255,255,255, .7) 0 1px 0px 0 inset);
+    &:active {
+      @include impress_border;  
+      @include box-shadow(rgba(0,0,0, .5) 0 2px 3px 0 inset, rgba(255,255,255, .7) 0 1px 0px 0);
+    }
+    &[disabled]{
+      @include onset_disabled;
+    }
+}
+@mixin onset_low{
+  @include onset;
+  @include inset;
+  @include background-image( linear-gradient(top, rgba(238,238,238, .8), rgba(238,238,238, 0)100%));
+  background-color: #ccc;
+    &:hover {
+      @include background-image( linear-gradient(top, rgba(255,255,255, .5), rgba(238,238,238, 0)100%));
+    }
+    &:active {
+     background-color: #999; 
+    }
+}
+@mixin onset_mid{
+  @include onset;
+  @include emboss;
+  @include background-image( linear-gradient(top, rgba(0,187,255, 1), rgba(1,151,206, 1)100%));
+  color: #fff;
+    &:hover{
+      @include background-image( linear-gradient(top, rgba(0,219,255, 1), rgba(1,151,206, 1)100%));
+    }
+    &:active {
+      background-color:rgba(0,102,153, 1) ;
+    }
+}
+@mixin onset_high{
+  @include onset;
+  @include emboss;
+  @include background-image( linear-gradient(top, rgba(253,196,0, 1), rgba(253,140,0, 1)100%));
+  color: #fff;
+    &:hover {
+      color: #fff;
+      @include background-image( linear-gradient(top, rgba(255,228,0, 1), rgba(253,140,0, 1)100%));
+    }
+    &:active {
+      color: #fff;
+     background-color: rgba(153,102,0, 1); 
+    }
+}

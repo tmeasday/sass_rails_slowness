@@ -1,0 +1,112 @@
+@mixin page_left{
+  .page_left{//begin book
+    width: 50%;
+    background-image: image-url('textures/bg_noise_80x80.png');
+    background-repeat: repeat;
+    background-color: blue;
+    position: relative;
+    float: left;
+    @include box-sizing(border-box);
+    @include border-radius(5px 0px 0px 5px);
+    @include background-image(linear-gradient(top, rgba(102, 153, 255, 1), rgba(0, 102, 204, 1) 100%));
+    &:before{
+      content:'';
+      display: block;
+      background: white;
+      @include position(absolute, 1%, 0, auto, auto, 99%, 98%);
+      @include box-shadow(rgba(0,0,0,.3) -1px 1px 3px 0);
+    }
+    &:after{//front cover
+      content:'';
+      display: block;
+      background: #fff;
+      @include background-image(linear-gradient(right, rgba(220, 220, 220, 1) 0%, rgba(250, 250, 250, 1) 10%, rgba(255, 255, 255, 1) 100%));
+      @include position(absolute, 1%, 0, auto, auto, 96%, 98%);
+      @include box-shadow(rgba(0,0,0,.3) -1px 0px 1px 0);
+    }
+    .wrapper{
+      height: 100%;
+      &:before{
+        content:'';
+        display: block;
+        background: white;
+        @include position(absolute, 1%, 0, auto, auto, 98%, 98%);
+        @include box-shadow(rgba(0,0,0,.3) -1px 0px 2px 0);
+      }
+      &:after{
+        content:'';
+        display: block;
+        background: white;
+        @include position(absolute, 1%, 0, auto, auto, 97%, 98%);
+        @include box-shadow(rgba(0,0,0,.3) -1px 0px 2px 0);
+      }
+      .inner{
+        position: relative;
+        z-index: 2;
+        padding: 30px 30px 30px 40px;
+        text-align: center;
+        @include clearfix;
+        h2{
+          margin-bottom: 10px;
+        }
+        img{
+          border: 5px solid #ccc;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }//end book
+}
+@mixin page_right{
+  .page_right{//begin book
+    width: 50%;
+    background-image: image-url('textures/bg_noise_80x80.png');
+    background-repeat: repeat;
+    background-color: blue;
+    position: relative;
+    float: left;
+    @include box-sizing(border-box);
+    @include border-radius(0px 5px 5px 0px);
+    @include background-image(linear-gradient(top, rgba(51, 153, 255, 1), rgba(0, 95, 190, 1) 100%));
+    &:before{
+      content:'';
+      display: block;
+      background: white;
+      @include position(absolute, 1%, auto, auto, auto, 99%, 98%);
+      @include box-shadow(rgba(0,0,0,.3) 1px 1px 3px 0);
+    }
+    &:after{//front cover
+      content:'';
+      display: block;
+      background: #fff;
+      border-left: 1px solid rgba(0,0,0,.3);
+      @include box-sizing(border-box);
+      @include background-image(linear-gradient(left, rgba(220, 220, 220, 1) 0%, rgba(250, 250, 250, 1) 10%, rgba(255, 255, 255, 1) 100%));
+      @include position(absolute, 1%, auto, auto, auto, 96%, 98%);
+      @include box-shadow(rgba(0,0,0,.3) 1px 0px 1px 0);
+    }
+    .wrapper{
+      height: 100%;
+      &:before{
+        content:'';
+        display: block;
+        background: white;
+        @include position(absolute, 1%, auto, auto, auto, 98%, 98%);
+        @include box-shadow(rgba(0,0,0,.3) 1px 0px 2px 0);
+      }
+      &:after{
+        content:'';
+        display: block;
+        background: white;
+        @include position(absolute, 1%, auto, auto, auto, 97%, 98%);
+        @include box-shadow(rgba(0,0,0,.3) 1px 0px 2px 0);
+      }
+      .inner{
+        position: relative;
+        z-index: 2;
+        padding: 30px 40px 30px 30px;
+        @include clearfix;
+      }
+    }
+  }//end book
+}

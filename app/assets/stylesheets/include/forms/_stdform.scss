@@ -1,0 +1,35 @@
+@mixin stdform_bg{
+  @include box-shadow(rgba(0, 0, 0, .3) 0px 1px 3px 0px inset);
+  @include background-image(linear-gradient(top, rgba(249, 249, 249, 1), rgba(255, 255, 255, 1) 50%));
+  @include box-sizing(border-box);
+  @include border-radius(3px);
+  margin: 0 0 10px 0;
+  padding: 5px 5px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid $paper;
+  border-right: 1px solid $cgrey;
+  border-left: 1px solid $cgrey;
+  outline: none;
+  &:focus{
+    border: 1px solid rgba(102, 204, 255, .9);
+    @include box-shadow(rgba(0, 0, 0, .3) 0px 1px 3px 0px inset, rgba(102, 204, 255, .3) 0 0px 3px 1px);
+    &:required{
+      &:invalid{}
+      &:valid{}
+    }
+  }
+}
+@mixin stdform_txt{
+  @include stdfont;
+  font-family: inherit;
+    &:-moz-placeholder {
+      color: #999;
+    } 
+    &::-webkit-input-placeholder{
+      color: #999;
+    }
+}
+@mixin stdform{
+  @include stdform_bg;
+  @include stdform_txt;
+}

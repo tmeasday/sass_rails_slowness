@@ -1,0 +1,12 @@
+// Details list > usually inside meta_lockup 
+ul{
+  &.details{
+    overflow: hidden;
+    li{
+      float: left;
+      margin:0 8px 0 0;
+      padding:0;
+    }
+  }
+  &.details{ margin-bottom: 10px;}
+}

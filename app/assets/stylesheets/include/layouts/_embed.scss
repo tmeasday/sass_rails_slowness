@@ -1,0 +1,14 @@
+@mixin embed_sizing($height) {
+  @include position(absolute, 0, 0, 0, 0);
+  overflow: hidden;
+  .items {
+    height: $height;
+  }
+  .scrolling {
+    @include position(absolute, $height, 0, 0, 0);
+    margin-top: 10px;
+    &:hover{
+      overflow-y: auto;
+    }
+  }
+}

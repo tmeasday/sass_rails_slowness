@@ -1,0 +1,128 @@
+// Global style for stats 
+dl{
+  margin-bottom: 10px;
+  clear: both;
+  dt{
+    color: #333;
+    margin-left: 1.5em;
+  }
+  dd{
+    color: #666;
+    font-weight: bold;    
+  }
+  &.stats{
+    text-align: center;
+    overflow: hidden;
+    dt{
+      float: left;
+      width: 80px;
+      font-size: 12px;
+      font-weight: lighter;
+      text-transform: uppercase;
+      border-bottom: 1px solid #eee;
+      border-top: 1px solid #eee;
+      text-align: center;
+      margin-right: 4px;
+      margin-left: 0;
+      padding: 70px- 22px- 12px 0 12px- 7px;
+      color: #333;
+    }
+    dd{
+      font-size: 30px;
+      font-family: Helvetica;
+      font-weight: bold;
+      display: block;
+      line-height: 50px;
+      float: left;
+      width: 80px;
+      margin-left: -80px- 4px;
+      overflow: hidden;
+      color: #666;
+    }       
+  }
+  &.stats_big{
+    float: left;
+    padding: 10px;
+    @include reveal;
+    @include border-radius(5px);
+    @include impress_border;
+    dt{
+      margin-left: 0;
+      display: inline;
+      &.big{
+        float:left;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100px;
+        padding: 50px 0 0px;
+        @extend h6;
+        color: white;
+      }
+    }
+    dd{
+      margin-left: 0;
+      width:30px;
+      display: inline;
+      float: left;
+      &.big{
+        margin-left: -100px;
+        float:left;
+        font-size: 40px;
+        line-height: 1em;
+        text-align: center;
+        width: 100px;
+        padding: 0px 0 30px;
+        color: white;        
+      }    
+    }
+  }//
+  &.stats_vert{
+    padding-left: 10px;
+    dt{
+      color: #666;
+      font-weight: lighter;
+    }
+    dd{
+      float: left;
+      width: 30px;
+      color: #666;
+      font-weight: normal;
+    }
+    
+  }
+  &.stats_horiz{
+    clear: none;
+    text-align: center;
+    overflow: hidden;
+    dt{
+      float: left;
+      width: 100px;
+      font-size: 14px;
+      font-weight: lighter;
+      text-transform: uppercase;
+      text-align: center;
+      margin-right: 4px;
+      margin-left: 0;
+      padding: 40px 0 0px;
+    }
+    dd{
+      font-size: 30px;
+      font-family: Helvetica;
+      font-weight: bold;
+      display: block;
+      line-height: 1em;
+      float: left;
+      width: 100px;
+      margin-left: -100px- 4px;
+      overflow: hidden;
+      color: #666;
+    }
+    &.lowercase{
+      dt{
+        text-transform: none;
+        font-size: 12px; 
+        font-weight: normal;
+      }
+    }
+  }
+}

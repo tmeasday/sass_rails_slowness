@@ -1,0 +1,71 @@
+.c_bindles.v_show, .c_bindles.v_edit{
+  /* Status */
+  .status{
+    color: #666;
+    @include impress;
+    @include position(absolute, 10px, auto, auto, 20px);
+    display: block;
+  }
+  /* Listing styles */
+  .list_view{
+    .selected {
+      background-color: rgba(100, 100, 255, 0.2);
+    }
+  }
+  .metadata, .glance, #comments{
+    padding-left:30px;
+    padding-right: 30px;
+    @include clearfix;
+  }
+  #comments{
+    padding-bottom: 10px;
+  }
+  .metadata{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .glance{
+    margin-bottom: 30px;
+  }
+  .item_title{
+    padding: 0 30px;
+    position: relative;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  .overview_social{
+    overflow: auto;
+    li{
+      float: left;
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+  .overview_collection{
+    @include position(absolute, 0, 30px, auto, auto);
+    font-weight: normal;
+    li{
+      float: left;
+      margin-right: 10px;
+      font-size: 12px;
+      &:last-child{margin-right: 0px;}
+    }
+  }
+}
+.c_bindles.v_show{
+  .qtip-wrapper .title{  
+    @include stdlink;
+  }
+  .chrome_nav{
+    .meta_lockup{
+      padding: 0;
+      @include ml_image(50px, 50px, 0px);
+      .details{
+        clear: none;
+      }
+    }
+  }
+}

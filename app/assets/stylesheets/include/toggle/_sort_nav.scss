@@ -1,0 +1,23 @@
+@mixin sort_nav($divider: 1px, $distance:10px){
+  li{
+    float: left;
+    font-weight: bold;
+    margin-right: $distance/2;
+    padding-right: $distance/2;
+    border-right: $divider solid #ccc;
+    cursor: default;
+    &.current, &.current a{
+      @include nolink(#333);
+    }
+    &:not(.current){
+      font-weight:normal;
+      color:$lblue;
+      cursor: pointer;
+    }
+    &:last-child{
+      margin-right: 0;
+      padding-right: 0px;
+      border-right: none;
+    }
+  }
+}

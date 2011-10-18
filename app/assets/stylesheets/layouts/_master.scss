@@ -1,0 +1,74 @@
+// Pages that the layouts correspond to
+.c_admins {
+  @include layout_behind;
+}
+.c_users{ 
+  &.v_show{  @include layout_behind; @include behind_feed;}
+  &.v_reserved{@include layout_behind;}
+}
+.c_get_started{
+  &.v_profile{@include layout_gs;}
+  &.v_interests{@include layout_gs; @include layout_singlet(700px); } 
+  &.v_follow{@include layout_gs; @include layout_singlet(700px); @include behind_feed; }
+  &.v_make{@include layout_gs; @include layout_singlet(700px);}
+}
+.c_dashboards{
+  &.v_show{@include layout_behind; @include behind_feed;}
+}
+.c_profiles{
+  &.v_show{ @include layout_behind; @include behind_feed;}
+  &.v_edit{  @include layout_behind;@include behind_feed;}
+  &.v_settings{  @include layout_singlet;}
+}
+.c_contacts{
+  &.v_index{ @include layout_behind; @include behind_feed;}
+  &.v_following{ @include layout_behind; @include behind_feed;}
+  &.v_followers{@include layout_behind; @include behind_feed;}
+  &.v_find{@include layout_behind; @include behind_feed;}
+}
+.c_notifications{
+  &.v_index{ @include layout_behind; @include behind_feed;}
+}
+.c_info{
+  &.v_about{@include layout_behind;}
+  &.v_terms{@include layout_behind;}
+  &.v_privacy{@include layout_behind;}
+  &.v_press{@include layout_behind;}
+}
+.c_bindles{
+  &.v_show{  @include layout_bindles;}
+  &.v_show.current_user{  @include layout_bindles(edit);}
+  &.v_edit{  @include layout_bindles(edit);}
+  &.v_index{  @include layout_behind; }
+  &.v_discover{  @include layout_behind; @include behind_feed}
+}
+.c_devise_sessions{
+  @include layout_singlet(320px);
+}
+.c_devise_passwords{
+  @include layout_singlet(320px);
+}
+.c_registrations{
+  &.v_new{@include layout_singlet(320px);}
+}
+.c_invitations{
+  &.v_index, &.v_show{  @include layout_behind;}
+  &.v_new{@include layout_singlet;}
+  &.v_expired{@include layout_singlet(320px);}
+}
+
+/*need namespace to add something for errors*/
+
+.c_info.v_index{
+  @include layout_minimum;
+}
+
+// hide stupid Get Satisfaction guy
+#fdbk_tab {
+  display: none;
+}
+.c_info.v_index{
+  #fdbk_tab {
+    display: block;
+  }
+}

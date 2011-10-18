@@ -1,0 +1,45 @@
+.c_admins.v_show {
+  #admin_widgets{
+      @include position(relative, auto, auto, auto, auto, 100%);
+      @include box-sizing(border-box);
+      @include clearfix;
+      clear: both;
+    .widgets {
+      @include box-sizing(border-box);
+      padding-left: 20px;
+    }
+    .widgets{ 
+      .wrapper{
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        @include osfont;
+      }  
+    }
+  }//
+  .admin_horiz{
+    border-top: 1px dotted #eee;
+    @include clearfix;
+    .nav{
+      float: left;
+      padding: 20px 0 20px 20px;
+      width: 120px;
+      h3{
+        display: block;
+        margin-bottom:10px;
+        text-transform: uppercase;
+      }
+      .sort{@include sort_nav(0px, 10px);}
+    }
+    .stats_horiz{
+      padding: 20px 20px 20px 0;
+      margin-bottom: 0;
+      dt{
+        img{
+          margin-bottom: -3px;
+          margin-right: 4px;
+        }
+      }
+    }
+  }//
+}

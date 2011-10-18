@@ -1,0 +1,26 @@
+@mixin stdlink{
+  @include user_select;
+  cursor: pointer;
+  color: $lblue;
+  &:hover{color: $mblue;}
+  &:active{color: $blend;}
+}
+@mixin nolink($color: #333){
+  @include user_select;
+  cursor: default;
+  color: $color;
+  &:hover{color: $color;}
+  &:active{color: $color;}
+}
+@mixin inset{
+  @include impress;
+  color: #666;
+  &:hover {color: $lblue;}
+  &:active {color: $blend;}
+}
+@mixin inverse{
+  @include emboss;
+  color: white;
+  &:hover {color:$lblue;}
+  &:active {color: black; @include impress; }
+}

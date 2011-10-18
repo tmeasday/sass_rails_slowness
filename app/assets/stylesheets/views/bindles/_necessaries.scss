@@ -1,0 +1,18 @@
+.c_bindles.v_edit_necessary{
+  form{
+    &.title_invalid{
+      >div:not(.name_error){display:none;}
+    }
+    &.items_invalid{
+      >div:not(.items_error){display:none;}
+    }
+    &.items_invalid {
+      &.title_invalid{
+        .name_items_error{display:block;}
+        .items_error, .name_error{
+          display: none;
+        }
+      }
+    }
+  }
+}
