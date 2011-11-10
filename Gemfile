@@ -11,12 +11,12 @@ gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+# group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'compass', '>= 0.12.alpha.0'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
-end
+# end
 
 gem 'jquery-rails'
 
@@ -30,5 +30,6 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+gem 'ruby-debug19'
+gem 'ruby-prof'
 
